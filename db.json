@@ -1,11 +1,24 @@
 {
-    "grafica": {
+    "grafica": [{
         "facebook": 2700,
         "youtube": 2000,
         "whatsapp": 1400,
-        "facebook-messenger": 1350,
+        "messenger": 1350,
         "instagram": 1123
-    }
+    },
+    {
+        "facebook": 2700,
+        "youtube": 2000,
+        "whatsapp": 1400,
+        "messenger": 1350,
+        "instagram": 1123
+    },{
+        "facebook": 1000,
+        "youtube": 800,
+        "whatsapp": 600,
+        "messenger": 2350,
+        "instagram": 3123
+    }]
     
 
     

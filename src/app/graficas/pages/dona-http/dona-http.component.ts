@@ -12,7 +12,7 @@ import { GraficasService } from '../../services/graficas.service';
 export class DonaHttpComponent implements OnInit {
 
   public doughnutChartLabels: Label[] = [
-     'Download Sales', 'In-Store Sales', 'Mail-Order Sales', 'Other'
+     'facebook', 'youtube', 'wahtsapp', 'messenger','instagram'
   ];
   public doughnutChartData: MultiDataSet = [
   ];
@@ -20,26 +20,22 @@ export class DonaHttpComponent implements OnInit {
 
   public colors: Color[] = [
     {
-      backgroundColor: [
-        '#0075ED',
-        '#00BAF7',
-        '#00E0DB',
-        '#00F7AD',
-        '#00ED63',
-      ]
+      
     }
   ]
-
+miarray:any[]=[]
   constructor( private graficasService: GraficasService ) { }
 
   ngOnInit(): void {
 
-    this.graficasService.getUsuariosRedesSocialesDonaData()
-    .subscribe( ({ labels, values }) => {
-console.log(values)
-      this.doughnutChartLabels = labels;
-      this.doughnutChartData=values
-
+    this.graficasService.getUsuariosRedesSociales()
+    .subscribe( (data:any) => {
+      console.log('este es el data ', data)
+      data.forEach((item:any) => {
+        this.miarray.push([item.facebook,item.youtube,item.whatsapp,item.messenger,item.instagram])
+        
+    });
+    this.doughnutChartData=this.miarray
     })
 
   }
